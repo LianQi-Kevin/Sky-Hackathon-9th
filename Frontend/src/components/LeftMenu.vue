@@ -5,14 +5,14 @@ import {ChatRound, House, Location, Tools} from "@element-plus/icons-vue";
 
 <template>
 <!--    <el-menu default-active="1" class="Menu" @open="handleOpen" @close="handleClose">-->
-    <el-menu default-active="home" class="Menu" mode="vertical" :collapse="false" :router="true">
-        <el-menu-item index="home">
+    <el-menu default-active="/home" class="Menu" mode="vertical" :collapse="false" :router="true">
+        <el-menu-item index="/home">
             <template #title>
                 <el-icon><House /></el-icon>
                 <span>Home</span>
             </template>
         </el-menu-item>
-        <el-sub-menu>
+        <el-sub-menu index="">
             <template #title>
                 <el-icon><Tools /></el-icon>
                 <span>Tools</span>
@@ -37,7 +37,7 @@ import {ChatRound, House, Location, Tools} from "@element-plus/icons-vue";
             </el-menu-item>
         </el-sub-menu>
         <el-divider />
-        <el-menu-item index="About">
+        <el-menu-item index="/About">
             <template #title>
                 <span>About</span>
             </template>
@@ -46,5 +46,6 @@ import {ChatRound, House, Location, Tools} from "@element-plus/icons-vue";
 </template>
 
 <style scoped>
+
 
 </style>

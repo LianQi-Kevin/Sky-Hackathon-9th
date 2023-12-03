@@ -1,15 +1,29 @@
 <script setup>
-import ThemeSwitch from "@/components/ThemeSwitch.vue";
+// import ThemeSwitch from "@/components/ThemeSwitch.vue";
+
+const props = defineProps({
+    title: {
+        type: String,
+        required: false,
+        default: "Sky-Hackathon-9th"
+    },
+    teamName: {
+        type: String,
+        required: false,
+        default: "无辑"
+    }
+})
+
 </script>
 
 <template>
     <div class="content">
         <img src="@/assets/svg/NVIDIA.svg" alt="NV icon" class="NVicon" />
         <div class="divider"/>
-        <p class="interval_margin exam_title">Sky-Hackathon-9th</p>
-        <p class="interval_margin team_name">Team: 无辑</p>
+        <el-text class="interval_margin exam_title">{{ props.title }}</el-text>
+        <el-text class="interval_margin team_name">Team: {{ props.teamName }}</el-text>
         <div style="flex-grow: 10"/>
-        <ThemeSwitch style="display: none"/>
+<!--        <ThemeSwitch style="display: none"/>-->
     </div>
 </template>
 
@@ -49,15 +63,23 @@ import ThemeSwitch from "@/components/ThemeSwitch.vue";
 .exam_title {
     font-size: 30px;
     margin-left: 20px;
-    margin-top: 5px;
     flex-basis: 270px;
+    height: 100%;
     flex-grow: 0;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .team_name {
     font-size: 20px;
-    margin-top: 15px;
+    height: 100%;
+    margin-bottom: 10px;
     flex-basis: 120px;
     flex-grow: 0;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
 }
 </style>

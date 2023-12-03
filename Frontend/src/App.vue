@@ -1,15 +1,15 @@
 <script setup>
 // import { RouterLink, RouterView } from 'vue-router'
-import pageHeader from '@/components/header.vue'
-import Menu_left from "@/components/Menu_left.vue";
+import pageHeader from '@/components/PageHeader.vue'
+import Menu_left from "@/components/LeftMenu.vue";
 </script>
 
 <template>
     <div class="content">
-        <pageHeader style="z-index: 1;" />
+        <pageHeader style="z-index: 1;" team-name="逻极"  title="Sky-Hackathon-9th"/>
         <Menu_left class="leftMenu" style="z-index: 1;" />
-        <div class="routerView">
-<!--            <router-view/>-->
+        <div class="routerView" style="z-index: 1;">
+            <router-view class="basic"/>
         </div>
         <div style="user-select: none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;">
             <div class="basic background" />
@@ -25,7 +25,7 @@ import Menu_left from "@/components/Menu_left.vue";
 }
 
 div.mask1 {
-    background: rgba(255, 255, 255, 10%);
+    background: rgba(255, 255, 255, 20%);
     position: fixed;
     z-index: 0;
 }
@@ -35,7 +35,7 @@ div.background {
     background-size: cover;     /* 基于容器大小伸缩 */
     position: fixed;     /* 跳出dom流 */
     z-index: -1;    /* 设置在底部 */
-    background-image: url("assets/svg/star_background.jpg");
+    background-image: url("assets/img/star_background.jpg");
     /* 背景图垂直、水平均居中 */
     background-position: center center;
     /* 背景图不平铺 */
@@ -57,11 +57,11 @@ div.background {
 
 .routerView {
     position: absolute;
-    top: 70px;
-    left: 220px;
-    width: calc(100vw - 200px - 40px);
-    height: calc(100vh - 50px - 40px);
-    background: rgba(0, 0, 0, 70%);
+    top: 50px;
+    left: 200px;
+    width: calc(100vw - 200px);
+    height: calc(100vh - 50px);
+    //background: rgba(131, 68, 68, 0.7);
     z-index: 1;
 }
 
